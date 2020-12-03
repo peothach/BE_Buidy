@@ -42,20 +42,21 @@ public class FindByKeyword extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		
 		request.setCharacterEncoding("UTF-8");
-
+		String key = (String)request.getAttribute("keyword");
+		System.out.print(key);
 		response.setContentType("application/json");
 
 		response.setCharacterEncoding("UTF-8");
 		
-		BufferedReader reader = request.getReader();
-		
-		if(reader.ready()) {
-			
-			Find_Model model = gson.fromJson(reader, Find_Model.class);
+//		BufferedReader reader = request.getReader();
+//		
+//		if(reader.ready()) {
+//			
+//			Find_Model model = gson.fromJson(reader, Find_Model.class);
 						
-			out.print(this.gson.toJson(product_service.findByKeyword(model.getKeyword())));
+			out.print(this.gson.toJson(product_service.findByKeyword(key)));
 			out.flush();
-		}
+//		}
 	}
 
 

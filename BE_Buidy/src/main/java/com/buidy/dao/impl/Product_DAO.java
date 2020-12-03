@@ -52,5 +52,10 @@ public class Product_DAO extends Abstract_DAO<Product_Model> implements IProduct
 		sql.append("CALL `find_by_keyword`(?);");
 		return query(sql.toString(), rowMapper, keyword);
 	}
-
+	@Override
+	public List<Product_Model> findByID(String productID){
+		StringBuilder sql = new StringBuilder();
+		sql.append("SELECT * FROM product WHERE product_id = ? ;");
+		return query(sql.toString(), rowMapper, productID);
+	}
 }

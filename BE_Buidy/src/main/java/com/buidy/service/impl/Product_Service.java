@@ -39,4 +39,10 @@ public class Product_Service implements IProduct_Service{
 	public List<Product_Model> findByKeyword(String keyword) {
 		return productDAO.fingByKeyword(keyword);
 	}
+
+	@Override
+	public List<Product_Model> findByID(String productID) {
+		return productDAO.findByID(productID);
+	}
+	
 }

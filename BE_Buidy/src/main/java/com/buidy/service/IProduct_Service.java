@@ -15,4 +15,6 @@ public interface IProduct_Service {
 	List<Product_Model> findProductByNew();
 	
 	List<Product_Model> findByKeyword(String keyword);
+	
+	List<Product_Model> findByID(String productID);
 }
